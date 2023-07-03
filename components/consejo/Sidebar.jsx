@@ -6,10 +6,10 @@ import Image from "next/image";
 import {
    FaArrowLeft,
    FaArrowRight,
-   FaShieldAlt,
-   FaPencilAlt,
+   FaUserAlt,
+   FaUserFriends,
+   FaPlus,
 } from "react-icons/fa";
-import { HiOutlineReceiptTax } from "react-icons/hi";
 
 const Sidebar = ({ children }) => {
    const [expanded, setExpanded] = useState(true);
@@ -76,74 +76,25 @@ const Sidebar = ({ children }) => {
                <span className="border-b-[1px] border-gray-200 w-full p-2"></span>
 
                <div className="flex hover:bg-mainColor hover:text-white active:bg-mainColor_v2 cursor-pointer my-2 p-3 rounded-lg w-full transition duration-100">
-                  {expanded ? (
-                     <div className="flex w-full">
-                        <div
-                           href="/"
-                           className="flex justify-start items-center flex-col w-full"
-                        >
-                           <div className="flex justify-around w-full">
-                              <div className="flex justify-start items-start flex-row w-full mb-2">
-                                 <FaShieldAlt size={20} />
-                                 {addContentWhenExpand && (
-                                    <span className="ml-2">LOPD</span>
-                                 )}
-                              </div>
-                           </div>
-
-                           <div className="flex flex-col w-full">
-                              {showLOPDoptions && (
-                                 <div className="flex flex-col px-5">
-                                    <Link href="/consejo">
-                                       <div className="text-sm hover:bg-gray-100 hover:text-black cursor-pointer my-1 p-2 rounded-lg w-full transition duration-100">
-                                          <span className="ml-2">
-                                             Asociados
-                                          </span>
-                                       </div>
-                                    </Link>
-                                    <Link href="/consejo/gestion">
-                                       <div className="text-sm hover:bg-gray-100 hover:text-black cursor-pointer my-1 p-2 rounded-lg w-full transition duration-100">
-                                          <span className="ml-2">
-                                             Altas y bajas
-                                          </span>
-                                       </div>
-                                    </Link>
-                                 </div>
-                              )}
-                           </div>
-                        </div>
-                     </div>
-                  ) : (
-                     <Link href="/client">
-                        <div className="flex justify-start items-center flex-col w-full">
-                           <div className="flex justify-around w-full">
-                              <div className="flex justify-start items-start flex-row w-full">
-                                 <FaShieldAlt size={20} />
-                              </div>
-                           </div>
-                        </div>
-                     </Link>
-                  )}
-               </div>
-
-               <div className="flex hover:bg-mainColor hover:text-white active:bg-mainColor_v2 cursor-pointer my-2 p-3 rounded-lg w-full transition duration-100">
                   <Link
-                     href="/tae"
+                     href="/consejo"
                      className="flex justify-start items-center w-full"
                   >
-                     <HiOutlineReceiptTax size={20} />
-                     {addContentWhenExpand && <span className="ml-2">CAE</span>}
+                     <FaUserFriends size={20} />
+                     {addContentWhenExpand && (
+                        <span className="ml-2">ASOCIADOS</span>
+                     )}
                   </Link>
                </div>
 
                <div className="flex hover:bg-mainColor hover:text-white active:bg-mainColor_v2 cursor-pointer my-2 p-3 rounded-lg w-full transition duration-100">
                   <Link
-                     href="/firma-digital"
+                     href="/consejo/gestion"
                      className="flex justify-start items-center w-full"
                   >
-                     <FaPencilAlt size={20} />
+                     <FaPlus size={20} />
                      {addContentWhenExpand && (
-                        <span className="ml-2">Firma digital</span>
+                        <span className="ml-2">ALTAS Y BAJAS</span>
                      )}
                   </Link>
                </div>
