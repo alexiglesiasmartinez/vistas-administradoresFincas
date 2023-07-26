@@ -9,6 +9,7 @@ import {
    FaCaretDown,
    FaShieldAlt,
    FaPencilAlt,
+   FaVideo
 } from "react-icons/fa";
 import { HiOutlineReceiptTax } from "react-icons/hi";
 
@@ -87,7 +88,7 @@ const Sidebar = ({ children }) => {
                               <div className="flex justify-start items-start flex-row w-full mb-2">
                                  <FaShieldAlt size={20} />
                                  {addContentWhenExpand && (
-                                    <span className="ml-2">LOPD</span>
+                                    <span className="ml-2">RGPD</span>
                                  )}
                               </div>
                            </div>
@@ -128,6 +129,16 @@ const Sidebar = ({ children }) => {
                         </div>
                      </Link>
                   )}
+               </div>
+
+               <div className="flex hover:bg-mainColor hover:text-white active:bg-mainColor_v2 cursor-pointer my-2 p-3 rounded-lg w-full transition duration-100">
+                  <Link
+                     href="/tutoriales"
+                     className="flex justify-start items-center w-full"
+                  >
+                     <FaVideo size={20} />
+                     {addContentWhenExpand && <span className="ml-2">Tutoriales</span>}
+                  </Link>
                </div>
 
                <div className="flex hover:bg-mainColor hover:text-white active:bg-mainColor_v2 cursor-pointer my-2 p-3 rounded-lg w-full transition duration-100">
